@@ -16,6 +16,7 @@ clearBtn.addEventListener("click", clear);
 function clear() {
     resultText.innerHTML = "";
     resultText.style.opacity = "0";
+
 }
 
 function getHuckText() {
