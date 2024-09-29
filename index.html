@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шифр Цезаря</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./fonts/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./fonts/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="cipherWindow">
+        <h1>Шифр Цезаря:</h1>
+        <textarea class="text" placeholder="Введите текст.."></textarea>
+        <p>Выберите сдвиг:</p>
+        <div>
+            <input class="key" type="number" value="1"/>
+        </div>
+        <div class="radio-btn">
+            <div class="radio-btn-item item1">
+                <input class="direction" id="item1" type="radio" value="left" name="direction"/>
+                <label for="item1">Left</label>
+            </div>
+            <div class="radio-btn-item item2">
+                <input class="direction" id="item2" type="radio" value="right" name="direction" checked/>
+                <label for="item2">Right</label>
+            </div>
+        </div>
+        <div class="btn-crypt">
+            <button class="decrypt-button">шифровать</button>
+            <button class="encrypt-button">дешифровать</button>
+            <button class="huck-button">взломать</button>
+        </div>
+        <p>Результат:</p>
+        <div class="result-text"></div>
+        <button class="clear-button">очистить</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
