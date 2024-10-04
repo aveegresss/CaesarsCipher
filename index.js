@@ -19,6 +19,7 @@ function clear() {
     resultText.innerHTML = "";
     resultText.style.opacity = "0";
     showNewHuckPackBtn.style.display = "none";
+    clearBtn.style.display = "none";
 }
 
 let huckTextArray = [];
@@ -46,6 +47,7 @@ function getHuckText() {
     }
 
     if (huckTextArray.length > 0) {
+        clearBtn.style.display = "block";
         huckTextPackCount = Math.floor(huckTextArray.length / 3)
         addHuckTextPack();
         if (huckTextArray.length > 3) {
@@ -99,6 +101,7 @@ function getEncryptedText() {
         }
     }
     resultText.innerHTML = resultText.innerHTML + res + `<br>`;
+    clearBtn.style.display = "block";
     resultText.style.opacity = "1";
 }
 
@@ -131,5 +134,6 @@ function getDecryptedText() {
         }
     }
     resultText.innerHTML = res;
+    clearBtn.style.display = "block";
     resultText.style.opacity = "1";
 }
