@@ -7,16 +7,23 @@ const huckBtn = document.querySelector(".huck-button");
 const alphabet = ["а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я"];
 let directions = document.querySelectorAll("input[type='radio']");
 const clearBtn = document.querySelector(".clear-button");
+const showNewHuckPackBtn = document.querySelector(".show-new-huck-pack");
 
 decryptBtn.addEventListener("click", getDecryptedText);
 encryptBtn.addEventListener("click", getEncryptedText);
 huckBtn.addEventListener("click", getHuckText);
 clearBtn.addEventListener("click", clear);
+showNewHuckPackBtn.addEventListener("click", showNewHuckPack);
 
 function clear() {
     resultText.innerHTML = "";
     resultText.style.opacity = "0";
+    showNewHuckPackBtn.style.display = "none";
 }
+
+let huckTextArray = [];
+let huckTextPackCount = 0;
+let currentHuckTextPack = 0;
 
 function getHuckText() {
     resultText.innerHTML = "";
@@ -33,8 +40,34 @@ function getHuckText() {
                 huckText += char;
             }
         }
-        resultText.innerHTML = resultText.innerHTML + huckText + `<br>`;
+        console.log(huckText)
+        huckTextArray.push(huckText)
         resultText.style.opacity = "1";
+    }
+
+    if (huckTextArray.length > 0) {
+        huckTextPackCount = Math.floor(huckTextArray.length / 3)
+        addHuckTextPack();
+        if (huckTextArray.length > 3) {
+            showNewHuckPackBtn.style.display = "block";
+        }
+    }
+}
+
+function showNewHuckPack() {
+    currentHuckTextPack += 1;
+    resultText.innerHTML = "";
+    addHuckTextPack();
+    if (currentHuckTextPack === huckTextPackCount) {
+        showNewHuckPackBtn.style.display = "none";
+    }
+}
+
+function addHuckTextPack() {
+    for (let i = 3 * currentHuckTextPack; i < 3 + 3 * currentHuckTextPack; i++) {
+        if (huckTextArray[i]) {
+            resultText.innerHTML = resultText.innerHTML + huckTextArray[i] + `<br>`
+        }
     }
 }
 

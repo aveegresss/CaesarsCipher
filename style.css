@@ -183,6 +183,23 @@ p {
     opacity: 0;
 }
 
+.show-new-huck-pack {
+    font-size: 15px;
+    font-family: "fontInput";
+    height: 40px;
+    width: 200px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 3px;
+    display: none;
+}
+
+.show-new-huck-pack:hover {
+    background: rgba(255, 255, 255, 0.58);
+    transform: scale(1.08);
+}
+
 @font-face {
     font-family: "fontInput";
     src: url("./fonts/fontInput.ttf") format("truetype");
