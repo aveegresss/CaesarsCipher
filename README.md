@@ -16,6 +16,7 @@
 ### 1. Клонирование репозитория
 ```bash
 git clone https://github.com/aveegresss/CaesarsCipher.git
+```
 
 ### 2. Запуск проекта
 Открыть файл index.html
